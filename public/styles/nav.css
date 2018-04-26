@@ -46,17 +46,3 @@
     border-radius: 10px;
 }
 
-/*#nav-bar .compose {
-    background-color: initial;
-    border-style: hidden;
-    color: #18abc5;
-}*/
-
-/*#nav-bar .compose:hover {
-  color: black;
-  cursor: pointer;
-}*/
-
-#nav-bar .button:focus {
-  outline-width: 0;
-}

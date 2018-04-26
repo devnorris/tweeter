@@ -96,6 +96,7 @@ loadTweets();
           method: 'POST',
           data: $('form').serialize(),
           success: function(result) {
+            console.log(result);
             loadTweets();
           },
           error: function(error) {

@@ -1,0 +1,35 @@
+
+section.new-tweet {
+    background-color: #efeaea;
+    margin-left: 2em;
+    margin-right: 2em;
+    border-radius: 10px;
+    margin-top: 50px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: lightgrey;
+    padding-bottom: 15px;
+    padding-top: 16px;
+    padding-right: 1em;
+    padding-left: 1em;
+    position: relative;
+    bottom: 50px;
+}
+
+section.new-tweet h2 {
+    border-bottom:1px solid #000;
+    padding-bottom:1px;
+}
+
+
+textarea {
+    overflow: auto;
+    width: 350px;
+}
+
+span.counter {
+  text-align: left;
+  margin-left: 260px;
+  font-size: 13px;
+  font-style: italic;
+}

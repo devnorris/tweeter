@@ -9,7 +9,7 @@ $(document).ready(function () {
 
   $('.error-message').hide();
 
-  $('.new-tweet').hide();
+  //$('.new-tweet').hide();
 
   function checkData(data) {
   data = data.replace("text=", "");
@@ -28,6 +28,12 @@ $(document).ready(function () {
     }
   }
 
+// Resets the word count when form is submited
+// $('input').on('click', function() {
+//   $('.counter').text(140);
+// });
+
+//
 $('.right-side').on('click', function() {
   $('.new-tweet').slideToggle()
   .find('textarea').focus();
@@ -56,7 +62,7 @@ $('.new-tweet textarea').on('focus', function() {
     let $bottomRight = $('<div>').addClass('bottom-right').appendTo($footer);
 
 
-    $('<p>').text(tweet.created_at).appendTo($bottomLeft)
+    $('<p>').text(moment.utc(tweet.created_at).fromNow()).appendTo($bottomLeft)
     $('<i>').addClass("fas fa-flag").appendTo($bottomRight)
     $('<i>').addClass("fas fa-retweet").appendTo($bottomRight)
     $('<i>').addClass("fas fa-heart").appendTo($bottomRight)
@@ -88,24 +94,26 @@ loadTweets();
 
 
   $("form").on('submit', function(event) {
+    const formData = $('form').serialize()
     event.preventDefault();
       if (checkData($('form').serialize())) {
       $.ajax(
         {
           url : '/tweets',
           method: 'POST',
-          data: $('form').serialize(),
+          data: formData,
           success: function(result) {
-            console.log(result);
-            loadTweets();
+            $('.tweetsContainer').prepend(createTweetElement(result));
+            $('.new-tweet textarea').val("");
+            $('.counter').text(140);
           },
           error: function(error) {
             console.error('There was a problem while posting to the server.')
           }
         }
       );
+      $("form").trigger("reset");
     }
-  $("form").trigger("reset");
   });
 
 });

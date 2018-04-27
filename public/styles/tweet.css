@@ -52,6 +52,7 @@ div.right {
 
 div.text {
   padding: 2em;
+  overflow-wrap: break-word;
 }
 
 footer {

@@ -25,6 +25,7 @@ section.new-tweet h2 {
 textarea {
     overflow: auto;
     width: 350px;
+    resize: vertical;
 }
 
 span.counter {
@@ -32,4 +33,11 @@ span.counter {
   margin-left: 260px;
   font-size: 13px;
   font-style: italic;
+}
+
+section.new-tweet .error-message {
+    display: block;
+    color: red;
+    border: 1px solid;
+    padding: 6px;
 }

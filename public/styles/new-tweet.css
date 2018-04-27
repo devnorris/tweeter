@@ -19,6 +19,8 @@ section.new-tweet {
 section.new-tweet h2 {
     border-bottom:1px solid #000;
     padding-bottom:1px;
+    font-family: 'Abril Fatface', sans-serif;
+    font-size: 26px;
 }
 
 
@@ -26,6 +28,7 @@ textarea {
     overflow: auto;
     width: 350px;
     resize: vertical;
+    padding-bottom: 20px;
 }
 
 span.counter {
@@ -38,6 +41,6 @@ span.counter {
 section.new-tweet .error-message {
     display: block;
     color: red;
-    border: 1px solid;
     padding: 6px;
+    font-weight: bold;
 }

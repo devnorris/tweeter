@@ -31,3 +31,7 @@ main {
   background-color: white;
   padding-top: 140px;
 }
+
+.tweetsContainer {
+    height: 100%;
+}

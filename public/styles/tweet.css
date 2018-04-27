@@ -1,5 +1,5 @@
 article.tweet {
-    opacity: 0.5;
+    opacity: 0.7;
     margin-right: 2em;
     margin-left: 2em;
     border-radius: 10px;
@@ -47,7 +47,8 @@ div.left img {
 div.right {
     float: right;
     padding-top: 20px;
-    padding-right: 10px
+    padding-right: 10px;
+    font-size: small;
 }
 
 div.text {

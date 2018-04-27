@@ -9,18 +9,17 @@ $(document).ready(function () {
 
   $('.error-message').hide();
 
-  //$('.new-tweet').hide();
 
   function checkData(data) {
   data = data.replace("text=", "");
     if (!data) {
       $('.error-message')
-      .text('Can not post empty tweet!')
+      .text('Can not post an empty tweet.')
       .slideDown();
       return false;
     } else if (data.length > 140) {
       $('.error-message')
-      .text('You have exceeded your character limit!')
+      .text('You have exceeded your character limit.')
       .slideDown();
       return false;
     } else {
@@ -28,9 +27,8 @@ $(document).ready(function () {
     }
   }
 
-// Resets the word count when form is submited
-// $('input').on('click', function() {
-//   $('.counter').text(140);
+// $( "input" ).focus(function() {
+//   $( '.tweet' ).css( "display", "inline" ).fadeOut( 1000 );
 // });
 
 //
@@ -103,9 +101,10 @@ loadTweets();
           method: 'POST',
           data: formData,
           success: function(result) {
-            $('.tweetsContainer').prepend(createTweetElement(result));
+            $('.tweetsContainer').prepend(createTweetElement(result))
             $('.new-tweet textarea').val("");
             $('.counter').text(140);
+
           },
           error: function(error) {
             console.error('There was a problem while posting to the server.')
